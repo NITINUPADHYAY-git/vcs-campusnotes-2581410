@@ -1,0 +1,3 @@
+campusnotes - academic otes repository
+subject: computer science engineering
+purpose: store and organise lecture notes
