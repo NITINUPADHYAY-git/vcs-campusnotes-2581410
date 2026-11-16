@@ -1,0 +1,13 @@
+#!/bin/sh
+
+pattern='TO''DO|FIX''ME'
+
+git diff --cached --name-only --diff-filter=ACM |
+while IFS= read -r file
+do
+    if git show ":$file" | grep -nE "$pattern"
+    then
+        echo "ERROR: Commit blocked. Remove flagged markers before committing."
+        exit 1
+    fi
+done

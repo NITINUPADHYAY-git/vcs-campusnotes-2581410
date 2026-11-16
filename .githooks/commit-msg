@@ -1,0 +1,15 @@
+#!/bin/sh
+
+commit_msg=$(cat "$1")
+
+if [ ${#commit_msg} -lt 10 ]; then
+    echo "ERROR: Commit message must contain at least 10 characters."
+    exit 1
+fi
+
+if ! printf '%s\n' "$commit_msg" | grep -qE '^(feat|fix|docs|refactor|chore):'; then
+    echo "ERROR: Commit message must start with feat:, fix:, docs:, refactor:, or chore:."
+    exit 1
+fi
+
+exit 0
