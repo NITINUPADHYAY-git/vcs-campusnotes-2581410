@@ -1,0 +1,4 @@
+campusnotes features
+organized academic notes
+project documentation
+github collaboration support
